@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  telegrambot:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      TOKEN: 1894062244:AAHiY2i3ybiJpU4w5Vc4kYFd4TceszoG2aI
+      HOST: db
+      PORT: 5432
+      USER: postgres
+      PASSWORD: test
+      DBNAME: postgres
+      SSLMODE: disable
+      LANGUAGE: ru
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: test
